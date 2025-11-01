@@ -1,0 +1,28 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--secondary-bg);
+  min-width: 160px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 0;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  transition: var(--transition);
+}
+.dropdown-content a:hover {
+  background-color: var(--hover);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}

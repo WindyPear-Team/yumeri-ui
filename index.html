@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yumeri-UI Test Page</title>
+  <link rel="stylesheet" href="/src/index.css">
+  <style>
+    body { padding-bottom: 100px; }
+    h2 { margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Yumeri-UI Test Page</h1>
+    
+    <h2>Buttons</h2>
+    <button class="btn">Default</button>
+    <button class="btn primary">Primary</button>
+    <button class="btn success">Success</button>
+    <button class="btn danger">Danger</button>
+    <button class="btn outline">Outline</button>
+
+    <h2>Inputs</h2>
+    <input type="text" class="input" placeholder="This is an input" style="margin-bottom: 8px;">
+    <input type="text" class="input" placeholder="Disabled input" disabled>
+
+    <h2>Card</h2>
+    <div class="card" style="max-width: 300px;">
+      <h3>Card Title</h3>
+      <p>This is a simple card component.</p>
+    </div>
+
+    <h2>Alerts</h2>
+    <div class="alert info">This is an info alert.</div>
+    <div class="alert success">This is a success alert.</div>
+    <div class="alert warning">This is a warning alert.</div>
+    <div class="alert error">This is an error alert.</div>
+
+    <h2>Tabs</h2>
+    <div class="tabs">
+      <div class="tab active">Active Tab</div>
+      <div class="tab">Inactive Tab</div>
+      <div class="tab">Another Tab</div>
+    </div>
+
+    <h2>Dropdown</h2>
+    <div class="dropdown">
+      <button class="btn">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+
+    <h2>Pagination</h2>
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a href="#">1</a>
+      <a href="#" class="active">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">&raquo;</a>
+    </div>
+
+    <h2>Accordion</h2>
+    <button class="accordion">Accordion Section 1</button>
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <button class="accordion">Accordion Section 2</button>
+    <div class="panel">
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <h2>Progress Bar</h2>
+    <div class="progress" style="margin-bottom: 1rem;">
+      <div class="progress-bar" style="width: 60%"></div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" style="width: 20%; background-color: var(--danger);"></div>
+    </div>
+
+    <h2>Badges & Tooltip</h2>
+    <h3>New Messages <span class="badge primary">New</span></h3>
+    <button class="btn">Notifications <span class="badge danger">3</span></button>
+    <p>
+      Here is some text with a <span class="tooltip">tooltip<span class="tooltiptext">This is the tooltip!</span></span>.
+    </p>
+
+    <h2>Loader</h2>
+    <div class="loader"></div>
+
+    <h2>Modal</h2>
+    <button class="btn primary" id="openModalBtn">Open Modal</button>
+    <div class="modal" id="myModal">
+      <div class="box">
+        <h3>Modal Title</h3>
+        <p>This is a modal box. Click cancel or outside the box to close.</p>
+        <div class="footer">
+          <button class="btn" id="cancelModalBtn">Cancel</button>
+          <button class="btn primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Modal
+    const modal = document.getElementById('myModal');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const cancelModalBtn = document.getElementById('cancelModalBtn');
+
+    if (openModalBtn) {
+      openModalBtn.onclick = function() {
+        modal.classList.add('active');
+      }
+    }
+    if (cancelModalBtn) {
+      cancelModalBtn.onclick = function() {
+        modal.classList.remove('active');
+      }
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.classList.remove('active');
+      }
+    }
+
+    // Accordion
+    const accordions = document.getElementsByClassName("accordion");
+    for (let i = 0; i < accordions.length; i++) {
+      accordions[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
+</body>
+</html>

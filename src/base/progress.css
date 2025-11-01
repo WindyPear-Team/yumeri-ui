@@ -1,0 +1,16 @@
+.progress {
+  width: 100%;
+  background-color: var(--hover);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.progress-bar {
+  width: 25%; /* Example width */
+  height: 12px;
+  background-color: var(--accent);
+  border-radius: var(--radius);
+  text-align: center;
+  line-height: 12px;
+  color: white;
+  font-size: 10px;
+}

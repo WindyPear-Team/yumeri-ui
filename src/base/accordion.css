@@ -1,0 +1,24 @@
+.accordion {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+.accordion:hover, .accordion.active {
+  background-color: var(--hover);
+}
+.panel {
+  padding: 0 18px;
+  background-color: var(--secondary-bg);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-bottom: 1px solid var(--border);
+}

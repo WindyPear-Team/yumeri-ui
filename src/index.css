@@ -12,3 +12,9 @@
  @import "./base/card.css";
  @import "./base/alert.css";
  @import "./base/loader.css";
+ @import "./base/dropdown.css";
+ @import "./base/tooltip.css";
+ @import "./base/accordion.css";
+ @import "./base/progress.css";
+ @import "./base/badge.css";
+ @import "./base/pagination.css";

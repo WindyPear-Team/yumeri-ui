@@ -1,11 +1,16 @@
 {
   "name": "yumeri-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple and modern CSS UI framework",
-  "style": "src/index.css",
+  "style": "dist/yumeri-ui.css",
   "files": [
+    "dist",
     "src"
   ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
   "keywords": [
     "css",
     "ui",
@@ -13,5 +18,10 @@
     "yumeri-ui"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "vite": "^7.1.12"
+  }
 }
