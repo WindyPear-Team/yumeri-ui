@@ -24,6 +24,39 @@
   <div class="container">
     <h1>Yumeri-UI Test Page</h1>
 
+    <h2>Grid System</h2>
+    <style>
+      .grid-demo .row { margin-bottom: 1rem; }
+      .grid-demo [class*="col-"] {
+        background-color: #eaf2ff;
+        border: 1px solid #cde0ff;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        color: var(--accent);
+        text-align: center;
+      }
+    </style>
+    <div class="grid-demo">
+      <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">.col-md-6</div>
+        <div class="col-md-6">.col-md-6</div>
+      </div>
+      <div class="row">
+        <div class="col-12">.col-12</div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-6">.col-md-3 .col-6</div>
+        <div class="col-md-3 col-6">.col-md-3 .col-6</div>
+        <div class="col-md-3 col-6">.col-md-3 .col-6</div>
+        <div class="col-md-3 col-6">.col-md-3 .col-6</div>
+      </div>
+    </div>
+
     <h2>Breadcrumb</h2>
     <ul class="breadcrumb">
       <li><a href="#">Home</a></li>
