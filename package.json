@@ -1,7 +1,7 @@
 {
-  "name": "yuui",
+  "name": "yumeri-ui",
   "version": "0.1.0",
-  "description": "A simple and modern CSS UI framework, created with Gemini.",
+  "description": "A simple and modern CSS UI framework",
   "style": "src/index.css",
   "files": [
     "src"
@@ -10,7 +10,7 @@
     "css",
     "ui",
     "framework",
-    "yuui"
+    "yumeri-ui"
   ],
   "author": "",
   "license": "ISC"
