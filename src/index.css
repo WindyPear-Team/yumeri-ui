@@ -1,0 +1,14 @@
+ @import "./variables.css";
+
+/* 当前主题，可换成 dark.css */
+ @import "./themes/light.css";
+
+/* 组件 */
+ @import "./base/layout.css";
+ @import "./base/button.css";
+ @import "./base/input.css";
+ @import "./base/modal.css";
+ @import "./base/tabs.css";
+ @import "./base/card.css";
+ @import "./base/alert.css";
+ @import "./base/loader.css";

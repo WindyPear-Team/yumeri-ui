@@ -1,0 +1,17 @@
+{
+  "name": "yuui",
+  "version": "0.1.0",
+  "description": "A simple and modern CSS UI framework, created with Gemini.",
+  "style": "src/index.css",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "css",
+    "ui",
+    "framework",
+    "yuui"
+  ],
+  "author": "",
+  "license": "ISC"
+}

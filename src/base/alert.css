@@ -1,0 +1,22 @@
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.alert.info {
+  background: #eaf2ff;
+  color: var(--accent);
+}
+.alert.success {
+  background: #e9f9ef;
+  color: var(--success);
+}
+.alert.warning {
+  background: #fff5e5;
+  color: var(--warning);
+}
+.alert.error {
+  background: #fdecea;
+  color: var(--danger);
+}

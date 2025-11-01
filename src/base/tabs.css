@@ -1,0 +1,20 @@
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.tab {
+  padding: 8px 14px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: var(--transition);
+  user-select: none;
+}
+.tab:hover {
+  background: var(--hover);
+  color: var(--text-color);
+}
+.tab.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}

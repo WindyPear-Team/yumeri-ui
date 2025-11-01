@@ -1,0 +1,33 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal .box {
+  background: var(--secondary-bg);
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  min-width: 280px;
+  box-shadow: var(--shadow);
+}
+.modal .box h3 {
+  margin-top: 0;
+  color: var(--text-color);
+}
+.modal .footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}

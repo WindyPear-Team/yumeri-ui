@@ -1,0 +1,15 @@
+.card {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
+  transition: var(--transition);
+}
+.card:hover {
+  box-shadow: var(--shadow);
+}
+.card h3 {
+  margin-top: 0;
+  color: var(--text-color);
+}

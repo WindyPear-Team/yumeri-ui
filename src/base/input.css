@@ -1,0 +1,19 @@
+.input {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--secondary-bg);
+  transition: var(--transition);
+  color: var(--text-color);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(47, 122, 229, 0.15);
+}
+.input[disabled] {
+  background: var(--hover);
+  color: var(--muted);
+  cursor: not-allowed;
+}
