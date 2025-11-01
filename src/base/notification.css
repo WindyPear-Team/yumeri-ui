@@ -1,0 +1,20 @@
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--secondary-bg);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--accent);
+  z-index: 3000;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+}
+.notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.notification.success { border-color: var(--success); }
+.notification.danger { border-color: var(--danger); }

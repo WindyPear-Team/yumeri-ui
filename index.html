@@ -11,8 +11,25 @@
   </style>
 </head>
 <body>
+
+  <nav class="navbar">
+    <div class="brand">YUUI</div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Components</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
   <div class="container">
     <h1>Yumeri-UI Test Page</h1>
+
+    <h2>Breadcrumb</h2>
+    <ul class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Components</a></li>
+      <li>Buttons</li>
+    </ul>
     
     <h2>Buttons</h2>
     <button class="btn">Default</button>
@@ -20,6 +37,20 @@
     <button class="btn success">Success</button>
     <button class="btn danger">Danger</button>
     <button class="btn outline">Outline</button>
+
+    <h2>Avatar & Switch</h2>
+    <span class="avatar avatar-sm"><img src="https://i.pravatar.cc/32?u=1"></span>
+    <span class="avatar"><img src="https://i.pravatar.cc/48?u=2"></span>
+    <span class="avatar avatar-lg"><img src="https://i.pravatar.cc/64?u=3"></span>
+    <span class="avatar avatar-xl"><img src="https://i.pravatar.cc/96?u=4"></span>
+    <label class="switch" style="margin-left: 2rem; vertical-align: middle;">
+      <input type="checkbox" checked>
+      <span class="slider"></span>
+    </label>
+    <label class="switch" style="vertical-align: middle;">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
 
     <h2>Inputs</h2>
     <input type="text" class="input" placeholder="This is an input" style="margin-bottom: 8px;">
@@ -31,11 +62,30 @@
       <p>This is a simple card component.</p>
     </div>
 
-    <h2>Alerts</h2>
+    <h2>Blocks</h2>
+    <div style="display: flex; gap: 1rem;">
+      <div class="block">
+        <span class="icon">📄</span>
+        <span>Documents</span>
+      </div>
+      <div class="block">
+        <span class="icon">⚙️</span>
+        <span>Settings</span>
+      </div>
+      <div class="block">
+        <span class="icon">❤️</span>
+        <span>Favorites</span>
+      </div>
+    </div>
+
+    <h2>Alerts & Notification</h2>
     <div class="alert info">This is an info alert.</div>
     <div class="alert success">This is a success alert.</div>
-    <div class="alert warning">This is a warning alert.</div>
-    <div class="alert error">This is an error alert.</div>
+    <button class="btn" id="showNotificationBtn">Show Notification</button>
+    <div id="notification-box" class="notification success">
+      <p>This is a notification!</p>
+    </div>
+
 
     <h2>Tabs</h2>
     <div class="tabs">
@@ -141,6 +191,18 @@
           panel.style.maxHeight = panel.scrollHeight + "px";
         } 
       });
+    }
+
+    // Notification
+    const notification = document.getElementById('notification-box');
+    const showNotificationBtn = document.getElementById('showNotificationBtn');
+    if(showNotificationBtn) {
+      showNotificationBtn.onclick = function() {
+        notification.classList.add('show');
+        setTimeout(() => {
+          notification.classList.remove('show');
+        }, 3000);
+      }
     }
   </script>
 </body>

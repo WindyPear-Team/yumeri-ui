@@ -18,3 +18,9 @@
  @import "./base/progress.css";
  @import "./base/badge.css";
  @import "./base/pagination.css";
+ @import "./base/breadcrumb.css";
+ @import "./base/avatar.css";
+ @import "./base/switch.css";
+ @import "./base/notification.css";
+ @import "./base/nav.css";
+ @import "./base/block.css";
