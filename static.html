@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YUUI - Static Components</title>
+  <link rel="stylesheet" href="/src/index.css">
+  <style>
+    body { padding-bottom: 100px; }
+    h2 { margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    
+    /* Component wrapper and code block styles */
+    .component-example { 
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+    .code-toggle {
+      margin-top: 1rem;
+      text-align: right;
+    }
+    .code-block {
+      display: none;
+      margin-top: 1rem;
+    }
+    .code-block.active {
+      display: block;
+    }
+    .code-block pre {
+      background-color: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border);
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+    /* Specific styles for static components */
+    .grid-demo .row { margin-bottom: 1rem; }
+    .grid-demo [class*="col-"] {
+      background-color: #eaf2ff;
+      border: 1px solid #cde0ff;
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      color: var(--accent);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand">YUUI</div>
+    <ul class="nav-links">
+      <li><a href="/static.html" class="active">Static</a></li>
+      <li><a href="/dynamic.html">Dynamic</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Static Component Showcase</h1>
+    <p>These components are styled with CSS only and do not require JavaScript.</p>
+
+    <!-- Grid -->
+    <h2>Grid System</h2>
+    <div class="component-example">
+      <div class="grid-demo">
+        <div class="row">
+          <div class="col-md-4">.col-md-4</div>
+          <div class="col-md-4">.col-md-4</div>
+          <div class="col-md-4">.col-md-4</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">.col-md-6</div>
+          <div class="col-md-6">.col-md-6</div>
+        </div>
+        <div class="row">
+          <div class="col-12">.col-12</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-6">.col-md-3 .col-6</div>
+          <div class="col-md-3 col-6">.col-md-3 .col-6</div>
+          <div class="col-md-3 col-6">.col-md-3 .col-6</div>
+          <div class="col-md-3 col-6">.col-md-3 .col-6</div>
+        </div>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-grid">Show Code</button>
+      </div>
+      <div class="code-block" id="code-grid">
+        <pre><code>&lt;div class="row"&gt;
+  &lt;div class="col-md-4"&gt;.col-md-4&lt;/div&gt;
+  &lt;div class="col-md-4"&gt;.col-md-4&lt;/div&gt;
+  &lt;div class="col-md-4"&gt;.col-md-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-6"&gt;.col-md-6&lt;/div&gt;
+  &lt;div class="col-md-6"&gt;.col-md-6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-12"&gt;.col-12&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-3 col-6"&gt;.col-md-3 .col-6&lt;/div&gt;
+  &lt;div class="col-md-3 col-6"&gt;.col-md-3 .col-6&lt;/div&gt;
+  &lt;div class="col-md-3 col-6"&gt;.col-md-3 .col-6&lt;/div&gt;
+  &lt;div class="col-md-3 col-6"&gt;.col-md-3 .col-6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <h2>Breadcrumb</h2>
+    <div class="component-example">
+      <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Components</a></li>
+        <li>Buttons</li>
+      </ul>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-breadcrumb">Show Code</button>
+      </div>
+      <div class="code-block" id="code-breadcrumb">
+        <pre><code>&lt;ul class="breadcrumb"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Components&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Buttons&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </div>
+    </div>
+    
+    <!-- Buttons -->
+    <h2>Buttons</h2>
+    <div class="component-example">
+      <button class="btn">Default</button>
+      <button class="btn primary">Primary</button>
+      <button class="btn success">Success</button>
+      <button class="btn danger">Danger</button>
+      <button class="btn outline">Outline</button>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-buttons">Show Code</button>
+      </div>
+      <div class="code-block" id="code-buttons">
+        <pre><code>&lt;button class="btn"&gt;Default&lt;/button&gt;
+&lt;button class="btn primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn success"&gt;Success&lt;/button&gt;
+&lt;button class="btn danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn outline"&gt;Outline&lt;/button&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Avatar & Switch -->
+    <h2>Avatar & Switch</h2>
+    <div class="component-example">
+      <span class="avatar avatar-sm"><img src="https://i.pravatar.cc/32?u=1"></span>
+      <span class="avatar"><img src="https://i.pravatar.cc/48?u=2"></span>
+      <span class="avatar avatar-lg"><img src="https://i.pravatar.cc/64?u=3"></span>
+      <span class="avatar avatar-xl"><img src="https://i.pravatar.cc/96?u=4"></span>
+      <label class="switch" style="margin-left: 2rem; vertical-align: middle;">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+      <label class="switch" style="vertical-align: middle;">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-avatar-switch">Show Code</button>
+      </div>
+      <div class="code-block" id="code-avatar-switch">
+        <pre><code>&lt;span class="avatar avatar-sm"&gt;&lt;img src="https://i.pravatar.cc/32?u=1"&gt;&lt;/span&gt;
+&lt;span class="avatar"&gt;&lt;img src="https://i.pravatar.cc/48?u=2"&gt;&lt;/span&gt;
+&lt;span class="avatar avatar-lg"&gt;&lt;img src="https://i.pravatar.cc/64?u=3"&gt;&lt;/span&gt;
+&lt;label class="switch"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="slider"&gt;&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Inputs -->
+    <h2>Inputs</h2>
+    <div class="component-example">
+      <input type="text" class="input" placeholder="This is an input" style="margin-bottom: 8px;">
+      <input type="text" class="input" placeholder="Disabled input" disabled>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-inputs">Show Code</button>
+      </div>
+      <div class="code-block" id="code-inputs">
+        <pre><code>&lt;input type="text" class="input" placeholder="This is an input"&gt;
+&lt;input type="text" class="input" placeholder="Disabled input" disabled&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <h2>Card</h2>
+    <div class="component-example">
+      <div class="card" style="max-width: 300px;">
+        <h3>Card Title</h3>
+        <p>This is a simple card component.</p>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-card">Show Code</button>
+      </div>
+      <div class="code-block" id="code-card">
+        <pre><code>&lt;div class="card"&gt;
+  &lt;h3&gt;Card Title&lt;/h3&gt;
+  &lt;p&gt;This is a simple card component.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Blocks -->
+    <h2>Blocks</h2>
+    <div class="component-example">
+      <div style="display: flex; gap: 1rem;">
+        <div class="block">
+          <span class="icon">📄</span>
+          <span>Documents</span>
+        </div>
+        <div class="block">
+          <span class="icon">⚙️</span>
+          <span>Settings</span>
+        </div>
+        <div class="block">
+          <span class="icon">❤️</span>
+          <span>Favorites</span>
+        </div>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-blocks">Show Code</button>
+      </div>
+      <div class="code-block" id="code-blocks">
+        <pre><code>&lt;div class="block"&gt;
+  &lt;span class="icon"&gt;📄&lt;/span&gt;
+  &lt;span&gt;Documents&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="block"&gt;
+  &lt;span class="icon"&gt;⚙️&lt;/span&gt;
+  &lt;span&gt;Settings&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="block"&gt;
+  &lt;span class="icon"&gt;❤️&lt;/span&gt;
+  &lt;span&gt;Favorites&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    <h2>Alerts</h2>
+    <div class="component-example">
+      <div class="alert info">This is an info alert.</div>
+      <div class="alert success" style="margin-top: 1rem">This is a success alert.</div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-alerts">Show Code</button>
+      </div>
+      <div class="code-block" id="code-alerts">
+        <pre><code>&lt;div class="alert info"&gt;This is an info alert.&lt;/div&gt;
+&lt;div class="alert success"&gt;This is a success alert.&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <h2>Pagination</h2>
+    <div class="component-example">
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#" class="active">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&raquo;</a>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-pagination">Show Code</button>
+      </div>
+      <div class="code-block" id="code-pagination">
+        <pre><code>&lt;div class="pagination"&gt;
+  &lt;a href="#"&gt;&amp;laquo;&lt;/a&gt;
+  &lt;a href="#"&gt;1&lt;/a&gt;
+  &lt;a href="#" class="active"&gt;2&lt;/a&gt;
+  &lt;a href="#"&gt;3&lt;/a&gt;
+  &lt;a href="#"&gt;4&lt;/a&gt;
+  &lt;a href="#"&gt;5&lt;/a&gt;
+  &lt;a href="#"&gt;&amp;raquo;&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <h2>Progress Bar</h2>
+    <div class="component-example">
+      <div class="progress" style="margin-bottom: 1rem;">
+        <div class="progress-bar" style="width: 60%"></div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar" style="width: 20%; background-color: var(--danger);"></div>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-progress">Show Code</button>
+      </div>
+      <div class="code-block" id="code-progress">
+        <pre><code>&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 60%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 20%; background-color: var(--danger);"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Badges & Tooltip -->
+    <h2>Badges & Tooltip</h2>
+    <div class="component-example">
+      <h3>New Messages <span class="badge primary">New</span></h3>
+      <button class="btn">Notifications <span class="badge danger">3</span></button>
+      <p>
+        Here is some text with a <span class="tooltip">tooltip<span class="tooltiptext">This is the tooltip!</span></span>.
+      </p>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-badges-tooltip">Show Code</button>
+      </div>
+      <div class="code-block" id="code-badges-tooltip">
+        <pre><code>&lt;h3&gt;New Messages &lt;span class="badge primary"&gt;New&lt;/span&gt;&lt;/h3&gt;
+&lt;button class="btn"&gt;Notifications &lt;span class="badge danger"&gt;3&lt;/span&gt;&lt;/button&gt;
+&lt;p&gt;
+  Here is some text with a &lt;span class="tooltip"&gt;tooltip&lt;span class="tooltiptext"&gt;This is the tooltip!&lt;/span&gt;&lt;/span&gt;.
+&lt;/p&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Loader -->
+    <h2>Loader</h2>
+    <div class="component-example">
+      <div class="loader"></div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-loader">Show Code</button>
+      </div>
+      <div class="code-block" id="code-loader">
+        <pre><code>&lt;div class="loader"&gt;&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+  </div>
+  <script type="module" src="/src/index.js"></script>
+</body>
+</html>

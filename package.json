@@ -1,11 +1,19 @@
 {
   "name": "yumeri-ui",
-  "version": "0.4.0",
-  "description": "A simple and modern CSS UI framework",
-  "style": "dist/yumeri-ui.css",
+  "version": "0.5.0",
+  "description": "A simple and modern CSS UI framework with JS components",
+  "main": "./dist/yumeri-ui.umd.js",
+  "module": "./dist/yumeri-ui.es.js",
+  "style": "./dist/style.css",
+  "exports": {
+    ".": {
+      "import": "./dist/yumeri-ui.es.js",
+      "require": "./dist/yumeri-ui.umd.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vite --host",

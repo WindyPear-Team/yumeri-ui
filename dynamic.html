@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YUUI - Dynamic Components</title>
+  <link rel="stylesheet" href="/src/index.css">
+  <style>
+    body { padding-bottom: 100px; }
+    h2 { margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .tab-content > * { display: none; } /* Hide tab content by default */
+    .tab-content > .active { display: block; } /* Show active tab content */
+
+    /* Component wrapper and code block styles */
+    .component-example { 
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+    .code-toggle {
+      margin-top: 1rem;
+      text-align: right;
+    }
+    .code-block {
+      display: none;
+      margin-top: 1rem;
+    }
+    .code-block.active {
+      display: block;
+    }
+    .code-block pre {
+      background-color: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border);
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand">YUUI</div>
+    <ul class="nav-links">
+      <li><a href="/static.html">Static</a></li>
+      <li><a href="/dynamic.html" class="active">Dynamic</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Dynamic Component Showcase</h1>
+
+    <!-- Tabs -->
+    <h2>Tabs</h2>
+    <div class="component-example">
+      <div class="tabs">
+        <a href="#" class="tab active" data-tab="#tab1-dyn">Tab 1</a>
+        <a href="#" class="tab" data-tab="#tab2-dyn">Tab 2</a>
+        <a href="#" class="tab" data-tab="#tab3-dyn">Tab 3</a>
+      </div>
+      <div class="tab-content">
+        <div id="tab1-dyn" class="active"><p>Content for Tab 1.</p></div>
+        <div id="tab2-dyn"><p>Content for Tab 2.</p></div>
+        <div id="tab3-dyn"><p>Content for Tab 3.</p></div>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-tabs">Show Code</button>
+      </div>
+      <div class="code-block" id="code-tabs">
+        <pre><code>&lt;div class="tabs"&gt;
+  &lt;a href="#" class="tab" data-tab="#tab1"&gt;Tab 1&lt;/a&gt;
+  &lt;a href="#" class="tab" data-tab="#tab2"&gt;Tab 2&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="tab-content"&gt;
+  &lt;div id="tab1"&gt;&lt;p&gt;Content for Tab 1.&lt;/p&gt;&lt;/div&gt;
+  &lt;div id="tab2"&gt;&lt;p&gt;Content for Tab 2.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <h2>Modal</h2>
+    <div class="component-example">
+      <button class="btn primary" data-toggle="modal" data-target="#myModal">Open Modal</button>
+      <div class="modal" id="myModal">
+        <div class="box">
+          <h3>Modal Title</h3>
+          <p>Click the cancel button or outside the box to close.</p>
+          <div class="footer">
+            <button class="btn" data-dismiss="modal">Cancel</button>
+            <button class="btn primary">OK</button>
+          </div>
+        </div>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-modal">Show Code</button>
+      </div>
+      <div class="code-block" id="code-modal">
+        <pre><code>&lt;!-- Trigger --&gt;
+&lt;button class="btn primary" data-toggle="modal" data-target="#myModal"&gt;Open Modal&lt;/button&gt;
+
+&lt;!-- Modal Structure --&gt;
+&lt;div class="modal" id="myModal"&gt;
+  &lt;div class="box"&gt;
+    &lt;h3&gt;Modal Title&lt;/h3&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;div class="footer"&gt;
+      &lt;!-- Use data-dismiss="modal" to close --&gt;
+      &lt;button class="btn" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+      &lt;button class="btn primary"&gt;OK&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Notification -->
+    <h2>Notification</h2>
+    <div class="component-example">
+      <button class="btn" data-toggle="notification" data-target="#myNotification" data-timeout="3000">Show Notification</button>
+      <div class="notification success" id="myNotification">
+        <p>This is a notification message!</p>
+        <button class="btn btn-clear" data-dismiss="notification" aria-label="Close"></button>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-notification">Show Code</button>
+      </div>
+      <div class="code-block" id="code-notification">
+        <pre><code>&lt;!-- Trigger --&gt;
+&lt;button class="btn" data-toggle="notification" data-target="#myNotification" data-timeout="3000"&gt;Show Notification&lt;/button&gt;
+
+&lt;!-- Notification Structure --&gt;
+&lt;div class="notification success" id="myNotification"&gt;
+  &lt;p&gt;This is a notification message!&lt;/p&gt;
+  &lt;button class="btn btn-clear" data-dismiss="notification" aria-label="Close"&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Accordion -->
+    <h2>Accordion</h2>
+    <div class="component-example">
+      <button class="accordion" data-toggle="accordion">Accordion Section 1</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <button class="accordion" data-toggle="accordion">Accordion Section 2</button>
+      <div class="panel">
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+      <div class="code-toggle">
+        <button class="btn outline btn-sm" data-toggle="code" data-target="#code-accordion">Show Code</button>
+      </div>
+      <div class="code-block" id="code-accordion">
+        <pre><code>&lt;button class="accordion" data-toggle="accordion"&gt;Accordion Section 1&lt;/button&gt;
+&lt;div class="panel"&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;
+&lt;button class="accordion" data-toggle="accordion"&gt;Accordion Section 2&lt;/button&gt;
+&lt;div class="panel"&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/index.js"></script>
+</body>
+</html>
